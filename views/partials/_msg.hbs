@@ -1,0 +1,23 @@
+{{#if MsgSuccess}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    Cadastrado com sucesso!
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/if}}
+
+{{#each error}}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{mensagem}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/each}}
