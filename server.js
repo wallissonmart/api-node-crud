@@ -5,8 +5,6 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const Usuario = require('./models/Usuario')
 
-const PORT = process.env.PORT || 3001
-
 app.engine(
   'hbs',
   hbs.engine({
@@ -193,6 +191,4 @@ app.post('/deletar', (req, res) => {
     })
 })
 
-module.exports = app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta: http://localhost:${PORT}`)
-})
+module.exports = app 

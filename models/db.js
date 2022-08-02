@@ -10,13 +10,13 @@ const sequelize = new Sequelize('node_crud', 'root', '', {
   logging: false,
 })
 
-sequelize
+/*sequelize
   .authenticate()
   .then(() => {
     console.log('Conectado com sucesso ao banco de dados!')
   })
   .catch((err) => {
     console.log('Conexão com banco de dados falhou!', err)
-  })
+  })*/
 
 module.exports = { Sequelize, sequelize }

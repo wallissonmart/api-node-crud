@@ -1,23 +1,31 @@
 const app = require('../server')
 const request = require('supertest')
-const { listaDatabase, userData } = require('./mocks')
 
-/*describe('Rota de listagem de usuários', () => {
-  test('Listando usuários sem filtro', async () => {
-    const res = await request(app).get('/users')
-    expect(res.body).toEqual(listaDatabase)
-  })
-})*/
+let usuario
 
-/*describe('Rota de cadastro de usuário', () => {
-  test('Cadastro de usuário alterando dados', async () => {
-    const newUser = { ...userData }
-    newUser.nome = 'Fábio'
-    newUser.email = 'fabio@gmail.com'
+beforeEach(() => {
+  usuario = [
+    {
+      nome: 'Bruno',
+      email: 'bruno@gmail.com',
+    },
+    {
+      nome: 'Enzo',
+      email: 'enzo@gmail.com',
+    },
+  ]
+})
 
-    const res = await request(app).post('/cad').send(newUser)
+test('Deve ser possível adicionar um novo usuário', async () => {
+  const response = await request(app).post('/cad').send(usuario[0])
 
-    expect(res.statusCode).toEqual(200)
-    expect(res.body).toEqual(newUser)
-  })
-})*/
+  expect(response.ok).toBeTruthy()
+})
+
+test('Deve ser possível listar todos os usuários', async () => {
+  const response = await request(app).post('/cad').send(usuario[0])
+
+  const responseGet = await request(app).get('/users')
+
+  expect(responseGet.body).toHaveLength(1)
+})
