@@ -18,7 +18,7 @@
 <h1 align="left" id="acessar">👆 Como acessar</h1>
 Para acessar a aplicação em sua máquina, siga os seguintes passsos:
 
-- git clone 
+- git clone https://github.com/wallissonmart/api-node-crud.git
 
 - npm install
 
