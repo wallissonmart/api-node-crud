@@ -16,7 +16,15 @@
 </h3>
 
 <h1 align="left" id="acessar">👆 Como acessar</h1>
-Para acessar a aplicação bastar clicar no seguinte link: ---
+Para acessar a aplicação em sua máquina, siga os seguintes passsos:
+
+- git clone 
+
+- npm install
+
+- npm run dev
+
+- ligar o servidor MySQL
 
 <h1 align="left" id="funcionalidades">⚙️ Funcionalidades</h1>
 
