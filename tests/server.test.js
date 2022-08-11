@@ -1,20 +1,16 @@
 const app = require('../server')
 const request = require('supertest')
 
-let usuario
-
-beforeEach(() => {
-  usuario = [
-    {
-      nome: 'Bruno',
-      email: 'bruno@gmail.com',
-    },
-    {
-      nome: 'Enzo',
-      email: 'enzo@gmail.com',
-    },
-  ]
-})
+const usuario = [
+  {
+    nome: 'Bruno',
+    email: 'bruno@gmail.com',
+  },
+  {
+    nome: 'Enzo',
+    email: 'enzo@gmail.com',
+  },
+]
 
 test('Deve ser possível adicionar um novo usuário', async () => {
   const response = await request(app).post('/cad').send(usuario[0])
